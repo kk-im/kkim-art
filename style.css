@@ -1,0 +1,257 @@
+/* Default styles, css variables */
+:root {
+  --overlay-background: #1f1f1f;
+  --text-color: #E9E9E9;
+  --homepage-text: #E9E9E9;
+  --homepage-hover:#A7C4B9;
+  --hover-color: #A7C4B9;
+
+  --form-width: 240px;
+  --form-back: #111118;
+  --form-fore: #ffffff;
+  --form-border: #66666a;
+}
+
+body {
+  background: url('/assets/home_background.jpg');
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: none;
+  height: 100vh;
+  overflow: hidden;
+  cursor: url(/assets/page-cursor.svg), auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  cursor: pointer;
+  color: #292d2c;
+}
+
+p {
+  font-weight: 300;
+}
+
+h1,
+a {
+  color: #fff;
+  font-size: 20px !important;
+  font-family: Helvetica, sans-serif;
+  font-weight: 400;
+}
+
+#home-link {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.home {
+  margin: 20px;
+  align-items: center;
+  display: flex;
+}
+
+.home a:hover {
+  cursor: url(/assets/page-cursor-hover.svg), auto;
+}
+
+.home-top {
+  position: relative;
+  justify-content: space-between;
+}
+
+.home-top:nth-child(2) {
+  text-align: end;
+}
+
+.home-bottom {
+  position: fixed;
+  bottom: 10px;
+  justify-content: start;
+}
+
+.overlay a {
+  z-index: 2;
+}
+
+.hide-left {
+  transform: translateX(-100%);
+}
+
+.hide-right {
+  transform: translateX(100%);
+}
+
+.hide-bottom {
+  transform: translateY(100%);
+  margin-left: -20px;
+  margin: 20px;
+}
+
+.overlay {
+  z-index: 1;
+  text-align: left;
+  position: absolute;
+  background: var(--overlay-background);
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  color: var(--text-color);
+  transition: transform 0.4s;
+}
+
+.projects-overlay {
+  width: 100vw;
+}
+
+/* Info Section Overlay */
+
+.info-overlay, .projects-overlay {
+  right: 0;
+  display: flex;
+}
+
+.info-overlay {
+  justify-content: end;
+}
+
+.info-right,
+.info-left {
+  width: 50vw;
+}
+
+.info-content {
+  overflow: auto;
+}
+
+.info-text {
+  padding: 50px;
+  font-size: 2.5em;
+}
+
+.info-portrait img {
+  object-fit: cover;
+  width: 100%;
+}
+
+/* Contacts Section */
+.contact-overlay {
+  display: flex;
+
+  margin-left: -20px;
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 50%;
+  height: 75%;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.nft-contact {
+  text-transform: uppercase;
+  font-size: 1em;
+  font-weight: 300;
+}
+
+.contact-single-link {
+  width: 100%;
+}
+
+.contact-single-link a {
+  font-size: 2.5em !important;
+  line-height: 1.75;
+  font-weight: 300;
+}
+
+/* Form */
+
+form {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  max-width: var(--form-width);
+
+  background: var(--form-back);
+  color: var(--form-fore);
+  padding: 24px;
+  font-family: Helvetica, sans-serif;
+
+  display: grid;
+  grid-gap: 16px 8px;
+  grid-template-areas: "label label" "input eth" "button button";
+  grid-template-columns: 1fr auto;
+  align-items: center;
+
+  display: none;
+  animation: fadein 0.4s 0.8s ease-in-out both;
+}
+
+form.has-eth {
+  display: grid;
+  animation: fadein 0.4s 0.8s ease-in-out both;
+}
+
+form label {
+  grid-area: label;
+
+  display: block;
+  font-size: 16px;
+}
+
+form input {
+  grid-area: input;
+
+  appearance: none;
+  width: 100%;
+  border: none;
+  padding: 8px;
+
+  font-variation-settings: "wght" 600;
+  text-align: right;
+
+  background: var(--form-back);
+  color: var(--form-fore);
+  border: 1px solid var(--form-border);
+  transition: border-color 0.2s ease-in-out;
+}
+
+form input:focus {
+  border: 1px solid var(--form-fore);
+  outline: none;
+}
+
+form span {
+  grid-area: eth;
+}
+
+form button {
+  grid-area: button;
+  appearance: none;
+  border: none;
+  background: var(--form-fore);
+  color: var(--form-back);
+  font: inherit;
+  padding: 8px;
+  font-size: 16px;
+}
+
+
+/* Generic close button styles */
+.info-link-overlay,
+.projects-link-overlay,
+.contact-link-overlay {
+  position: absolute;
+  padding: 25px;
+}
+
+/* Mobile-friendly */
